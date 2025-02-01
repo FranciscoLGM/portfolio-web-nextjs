@@ -46,17 +46,21 @@ const EmailSection = () => {
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Conectémonos</h5>
+        <h5 className="text-xl font-bold text-white my-2">¡Hablemos!</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Actualmente estoy buscando nuevas oportunidades, mi bandeja de entrada
-          está siempre abierta. Si tienes alguna pregunta o simplemente quieres
-          saludarme, ¡haré todo lo posible por responderte!
+          Estoy ansioso por explorar nuevas oportunidades y colaboraciones. Si
+          tienes alguna pregunta, comentario o simplemente deseas conectar, no
+          dudes en enviarme un mensaje. Estaré encantado de escucharte y
+          responder a todas tus inquietudes.
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/FranciscoLGM" target="_blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link
+            href="https://www.linkedin.com/in/francisco-lopez-garciamayorga/"
+            target="_blank"
+          >
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
@@ -64,7 +68,7 @@ const EmailSection = () => {
       <div>
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
+            Email enviado correctamente!
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -97,7 +101,7 @@ const EmailSection = () => {
                 id="subject"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder="Just saying hi!"
               />
             </div>
             <div className="mb-6">
@@ -118,7 +122,7 @@ const EmailSection = () => {
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Enviar mensaje
+              ¡Enviar Mensaje!
             </button>
           </form>
         )}

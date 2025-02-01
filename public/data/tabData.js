@@ -4,12 +4,14 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
+        <li>JavaScript</li>
         <li>Node.js</li>
         <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
         <li>React</li>
+        <li>Next.js</li>
+        <li>Angular</li>
+        <li>Java</li>
+        <li>Spring Boot</li>
       </ul>
     ),
   },
@@ -18,8 +20,10 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Diseñador Fotográfico, Universidad de Palermo</li>
+        <li>Desarrollador Full Stack, Argentina Programa</li>
+        <li>Desarrollador Full Stack Web JavaScript/Node, Codo a Codo</li>
+        <li>Desarrollo Web Avanzado, Universidad Tecnológica Nacional</li>
       </ul>
     ),
   },
@@ -28,8 +32,11 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Programación con JavaScript, Meta</li>
+        <li>Especialización en React, Codo a Codo</li>
+        <li>Frontend Developer Libraries, FreecodeCamp</li>
+        <li>JavaScript Algorithms and Data Structures, FreecodeCamp</li>
+        <li>Responsive Web Design, freecodecamp</li>
       </ul>
     ),
   },
