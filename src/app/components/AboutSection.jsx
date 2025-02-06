@@ -5,7 +5,7 @@ import TabButton from "./TabButton";
 import TAB_DATA from "../../../public/data/tabData";
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("education");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -51,12 +51,6 @@ const AboutSection = () => {
       </div>
       <div className="flex flex-row flex-wrap justify-evenly mt-8 space-x-4">
         <TabButton
-          selectTab={() => handleTabChange("skills")}
-          active={tab === "skills"}
-        >
-          Habilidades
-        </TabButton>
-        <TabButton
           selectTab={() => handleTabChange("education")}
           active={tab === "education"}
         >
@@ -67,6 +61,12 @@ const AboutSection = () => {
           active={tab === "certifications"}
         >
           Certificaciones
+        </TabButton>
+        <TabButton
+          selectTab={() => handleTabChange("skills")}
+          active={tab === "skills"}
+        >
+          Habilidades
         </TabButton>
       </div>
       <section>
