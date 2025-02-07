@@ -10,7 +10,7 @@ const Footer = () => {
             href="https://github.com/FranciscoLGM"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-500 ml-3 hover:underline"
+            className="text-primary-500 ml-2 hover:underline"
           >
             FranciscoLGM
           </a>
