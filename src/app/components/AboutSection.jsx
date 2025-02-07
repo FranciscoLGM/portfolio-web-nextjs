@@ -1,5 +1,5 @@
 "use client";
-import React, { useTransition, useState } from "react";
+import React, { useTransition, useState, useMemo } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import TAB_DATA from "../../../public/data/tabData";
@@ -14,6 +14,11 @@ const AboutSection = () => {
     });
   };
 
+  // Memoriza el contenido de la pestaña actual
+  const currentTabContent = useMemo(() => {
+    return TAB_DATA.find((t) => t.id === tab)?.content;
+  }, [tab]);
+
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
@@ -22,7 +27,8 @@ const AboutSection = () => {
             src="/images/about-image.jpg"
             width={500}
             height={500}
-            alt=""
+            alt="Imagen sobre mí"
+            className="rounded-lg"
           />
         </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
@@ -50,28 +56,23 @@ const AboutSection = () => {
         </div>
       </div>
       <div className="flex flex-row flex-wrap justify-evenly mt-8 space-x-4">
-        <TabButton
-          selectTab={() => handleTabChange("education")}
-          active={tab === "education"}
-        >
-          Formación
-        </TabButton>
-        <TabButton
-          selectTab={() => handleTabChange("certifications")}
-          active={tab === "certifications"}
-        >
-          Certificaciones
-        </TabButton>
-        <TabButton
-          selectTab={() => handleTabChange("skills")}
-          active={tab === "skills"}
-        >
-          Habilidades
-        </TabButton>
+        {["education", "certifications", "skills"].map((tabId) => (
+          <TabButton
+            key={tabId}
+            selectTab={() => handleTabChange(tabId)}
+            active={tab === tabId}
+          >
+            {tabId === "education"
+              ? "Formación"
+              : tabId === "certifications"
+              ? "Certificaciones"
+              : "Habilidades"}
+          </TabButton>
+        ))}
       </div>
       <section>
         <div className="flex flex-col md:flex-row justify-start mt-8 mb-8 ml-4 md:ml-8 lg:ml-16 xl:ml-32">
-          {TAB_DATA.find((t) => t.id === tab)?.content}
+          {currentTabContent}
         </div>
       </section>
     </section>

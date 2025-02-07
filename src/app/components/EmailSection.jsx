@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,26 +17,40 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const endpoint = `https://form.taxi/s/${process.env.NEXT_PUBLIC_FORM_CODE}`;
 
-    // Form the request for sending data to the server.
     const options = {
-      // The method is POST because we are sending data.
       method: "POST",
-      // Tell the server we're sending JSON.
       headers: {
         "Content-Type": "application/json",
       },
-      // Body of the request is the JSON data we created above.
       body: JSONdata,
     };
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+    try {
+      const response = await fetch(endpoint, options);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
+      // Verificar si la respuesta tiene contenido y es de tipo JSON
+      const contentType = response.headers.get("Content-Type");
+      let resData;
+      if (contentType && contentType.includes("application/json")) {
+        resData = await response.json();
+      } else {
+        resData = await response.text(); // Obtener la respuesta como texto
+      }
+
+      if (response.status === 200) {
+        setEmailSubmitted(true);
+        setErrorMessage("");
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setErrorMessage("Error al enviar el mensaje. Intenta nuevamente.");
     }
   };
 
@@ -68,7 +83,7 @@ const EmailSection = () => {
       <div>
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">
-            Email enviado correctamente!
+            ¡Email enviado correctamente!
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -124,6 +139,9 @@ const EmailSection = () => {
             >
               ¡Enviar Mensaje!
             </button>
+            {errorMessage && (
+              <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+            )}
           </form>
         )}
       </div>
