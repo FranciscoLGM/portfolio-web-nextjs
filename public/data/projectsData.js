@@ -6,7 +6,7 @@ const projectsData = [
     image: "/images/projects/portfolio-next.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/FranciscoLGM/portfolio-web-nextjs.git",
-    previewUrl: "https://franciscolopezgarciamayorga.vercel.app/",
+    previewUrl: "/",
   },
   {
     id: 2,
