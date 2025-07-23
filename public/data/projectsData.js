@@ -1,6 +1,16 @@
 const projectsData = [
   {
     id: 1,
+    title: "SimpleSwap DEX",
+    description:
+      "DApp de intercambio de tokens estilo Uniswap V2, desarrollada con Scaffold-ETH 2, Solidity y Next.js.",
+    image: "/images/projects/simpleswap.png",
+    tag: ["All", "Web", "Blockchain"],
+    gitUrl: "https://github.com/FranciscoLGM/simple-swap-dapp",
+    previewUrl: "https://simpleswap-dex.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Portafolio Web",
     description: "Portafolio personal en Next.js.",
     image: "/images/projects/portfolio-next.png",
@@ -9,7 +19,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Chatbot",
     description: "Chatbot con inteligencia artificial.",
     image: "/images/projects/chatbot.png",
@@ -18,7 +28,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Peliculas YTS",
     description: "Aplicación para buscar y descargar películas.",
     image: "/images/projects/peliculas-yts.png",
@@ -27,7 +37,7 @@ const projectsData = [
     previewUrl: "https://peliculas-yts.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "25 + 5 Clock",
     description: "Reloj Pomodoro para mejorar la productividad.",
     image: "/images/projects/pomodoro-clock.png",
@@ -36,7 +46,7 @@ const projectsData = [
     previewUrl: "https://pomodoro-clock-25-plus-5.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Markdown Previewer",
     description: "Editor en tiempo real para previsualizar Markdown.",
     image: "/images/projects/markdown-previewer.png",
@@ -45,7 +55,7 @@ const projectsData = [
     previewUrl: "https://javascript-markdown-previewer.netlify.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "React Calculator",
     description: "Calculadora simple creada con React.",
     image: "/images/projects/js-calculadora.png",
@@ -54,7 +64,7 @@ const projectsData = [
     previewUrl: "https://javascript-react-calculator.netlify.app/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Random Quote Machine",
     description: "Generador de citas aleatorias con opción de compartir.",
     image: "/images/projects/maquina-de-frases-aleatorias.png",
@@ -63,7 +73,7 @@ const projectsData = [
     previewUrl: "https://maquina-de-frases-aleatorias.netlify.app/",
   },
   {
-    id: 8,
+    id: 9,
     title: "Drum Machine",
     description: "Simulador de batería electrónica.",
     image: "/images/projects/drum-machine.png",
@@ -72,7 +82,7 @@ const projectsData = [
     previewUrl: "https://bateria-electronica.netlify.app/",
   },
   {
-    id: 9,
+    id: 10,
     title: "Portfolio Web Full Stack",
     description: "Portafolio personal full stack en Angular y Spring Boot.",
     image: "/images/projects/portfolio.jpg",
@@ -81,7 +91,7 @@ const projectsData = [
     previewUrl: "https://franciscolopezgarciamayorga.web.app/",
   },
   {
-    id: 10,
+    id: 11,
     title: "Pagina de Películas",
     description: "Sitio web para descargar películas.",
     image: "/images/projects/notflix.jpg",
@@ -90,7 +100,7 @@ const projectsData = [
     previewUrl: "https://franciscolgm.github.io/",
   },
   {
-    id: 11,
+    id: 12,
     title: "Survey Form",
     description: "Formulario de encuesta interactivo.",
     image: "/images/projects/formulario-encuesta.jpg",
@@ -99,7 +109,7 @@ const projectsData = [
     previewUrl: "https://codepen.io/franciscolopezg/full/VwyVGag",
   },
   {
-    id: 12,
+    id: 13,
     title: "Tribute Page",
     description: "Página de tributo a una figura histórica.",
     image: "/images/projects/pagina-tributo.jpg",
@@ -108,7 +118,7 @@ const projectsData = [
     previewUrl: "https://codepen.io/franciscolopezg/full/NWXLdaN",
   },
   {
-    id: 13,
+    id: 14,
     title: "Product Landing Page",
     description: "Página de aterrizaje para un producto.",
     image: "/images/projects/landing-page.jpg",
@@ -117,7 +127,7 @@ const projectsData = [
     previewUrl: "https://codepen.io/franciscolopezg/full/JjMzbMx",
   },
   {
-    id: 14,
+    id: 15,
     title: "Technical Documentation Page",
     description: "Documentación técnica de un proyecto.",
     image: "/images/projects/documentacion-tecnica.jpg",
